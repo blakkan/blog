@@ -1,0 +1,21 @@
+%h1 Listing welcomes
+
+%table
+  %tr
+    %th Name
+    %th Price
+    %th
+    %th
+    %th
+
+  - @welcomes.each do |welcome|
+    %tr
+      %td= welcome.name
+      %td= welcome.price
+      %td= link_to 'Show', welcome
+      %td= link_to 'Edit', edit_welcome_path(welcome)
+      %td= link_to 'Destroy', welcome, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Welcome', new_welcome_path
